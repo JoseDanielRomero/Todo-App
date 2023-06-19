@@ -1,0 +1,45 @@
+.input-task-container {
+    height: 11%;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-task {
+    height: 100%;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.1rem;
+    border: none;
+    color: hsl(235, 19%, 35%);
+}
+
+.input-task::placeholder {
+    color: hsl(237, 9%, 60%);
+}
+
+.input-task:focus {
+    outline: none;
+}
+
+.submit-button {
+    height: 50%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 1.5%;
+    filter: invert(28%) sepia(19%) saturate(775%) hue-rotate(196deg) brightness(97%) contrast(91%);
+}
+
+.add-icon {
+    height: 100%;
+    filter: hue-rotate(120deg);
+}

@@ -16,7 +16,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    height: 20%;
+    height: auto;
     width: 100%;
 }
 
