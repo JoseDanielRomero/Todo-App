@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid'
 import '../stylesheets/InputTask.css'
 import addIcon from '../images/round-add-button-svgrepo-com.svg'
 
-function InputTask({ newTask, setNewTask, tasks, setTasks, isCompleted, setIsCompleted }) {
+function InputTask({ newTask, setNewTask, tasks, setTasks }) {
     const handleChangeTask = (event) => {
         setNewTask(event.target.value);
     }
@@ -11,12 +11,14 @@ function InputTask({ newTask, setNewTask, tasks, setTasks, isCompleted, setIsCom
         e.preventDefault();
         const copyTasks = [...tasks];
         const noSpacesNewTask = newTask.trim();
-        copyTasks.push({
-            id: uuidv4(),
-            text: noSpacesNewTask,
-            isCompleted: false
-        });
-        setTasks(copyTasks)
+        if (tasks.length < 7 && noSpacesNewTask.length > 0) {
+            copyTasks.push({
+                id: uuidv4(),
+                text: noSpacesNewTask,
+                isCompleted: false
+            });
+            setTasks(copyTasks)
+        }
         setNewTask('')
     }
 
