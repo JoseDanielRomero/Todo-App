@@ -1,7 +1,7 @@
 import '../stylesheets/TaskList.css'
 import InputTask from './InputTask';
 
-function TaskList({ newTask, setNewTask, tasks, setTasks }) {
+function TaskList({ newTask, setNewTask, tasks, setTasks, darkMode, setDarkMode }) {
   const handleChangeCheckbox = (event, idTask) => {
     const {checked} = event.target;
     const findId = tasks.findIndex((element) => element.id === idTask );
@@ -22,6 +22,9 @@ function TaskList({ newTask, setNewTask, tasks, setTasks }) {
     return countPending.length;
   }
 
+  const changeTheme = darkMode ? 'task-list-container dark' : 'task-list-container light';
+  const changeTheme2 = darkMode ? 'line dark' : 'line light';
+
   return (
     <>
       <InputTask 
@@ -29,15 +32,27 @@ function TaskList({ newTask, setNewTask, tasks, setTasks }) {
         setNewTask={setNewTask}
         tasks={tasks}
         setTasks={setTasks}
+        darkMode={darkMode}
       />
-      <article className='task-list-container'>
+      <article className={changeTheme}>
         {tasks.map(task => {
 
-          const taskClass = task.isCompleted == true ? 'task-text tachado' : 'task-text normal';
+          const taskClass = () => {
+            if (task.isCompleted == false) {
+              if (darkMode == true) {
+                return 'task-text dark'
+              } else {
+                return 'task-text light'
+              } 
+            } else {
+              return 'task-text tachado'
+            }
+
+          }
 
           return (
             <div className='task-container'>
-              <label className={taskClass}>
+              <label className={taskClass()}>
                 <input
                   type='checkbox' 
                   className='checkbox-task'
@@ -48,7 +63,7 @@ function TaskList({ newTask, setNewTask, tasks, setTasks }) {
                 />
                 {task.text}
               </label>
-              <hr></hr>
+              <hr className={changeTheme2}></hr>
             </div>
           )
         })}
@@ -62,7 +77,6 @@ function TaskList({ newTask, setNewTask, tasks, setTasks }) {
           onClick={() => {
             handleButtonCompleted(tasks);
           }}
-          // onClick={handleButtonCompleted(tasks)}
         >Clear Completed</button>
       </article>
     </>

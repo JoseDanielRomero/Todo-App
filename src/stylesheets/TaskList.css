@@ -1,8 +1,17 @@
 .task-list-container {
     height: 75%;
     width: 100%;
-    background-color: white;
     border-radius: 10px;
+}
+
+.task-list-container.light {
+    background-color: white;
+    transition: all .3s;
+}
+
+.task-list-container.dark {
+    background-color: hsl(233, 24%, 22%);
+    transition: all .3s;
 }
 
 .task-container {
@@ -14,7 +23,7 @@
 .checkbox-task {
     width: 2em;
     height: 2em;
-    background-color: white;
+    background-color: transparent;
     border-radius: 50%;
     vertical-align: middle;
     border: 1px solid #ddd;
@@ -34,7 +43,16 @@
 
 .task-text {
     font-size: 1.1rem;
+}
+
+.task-text.light {
     color: hsl(235, 19%, 35%);
+    transition: all .3s;
+}
+
+.task-text.dark {
+    color: white;
+    transition: all .3s;
 }
 
 .tachado {
@@ -42,9 +60,18 @@
     color: hsl(237, 9%, 60%);
 }
 
-hr {
-    border: .1px solid rgb(217, 217, 217);
+.line {
     margin-top: 3%;
+}
+
+.line.light {
+    border: .1px solid rgb(217, 217, 217);
+    transition: all .3s;
+}
+
+.line.dark {
+    border: .1px solid hsl(234, 18%, 32%);
+    transition: all .3s;
 }
 
 .buttons-container {

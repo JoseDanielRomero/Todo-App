@@ -30,9 +30,22 @@
 .toogle-button {
     height: 40px;
     width: 40px;
-    background-image: url('../images/icon-moon.svg');
     background-color: transparent;
     background-size: 100% 100%;
     border: none;
+}
+
+.toogle-button.light {
+    background-image: url('../images/icon-moon.svg');
+    transition: all .3s;
+}
+
+.toogle-button.dark {
+    background-image: url('../images/icon-sun.svg');
+    transition: all .3s;
+}
+
+.toogle-button:hover {
+    cursor: pointer;
 }
 

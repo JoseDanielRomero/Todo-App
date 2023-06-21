@@ -6,10 +6,18 @@
     width: 100%;
 }
 
-.header-image-light {
+.header-image {
     height: 100%;
     width: 100%;
-    background-image: url('../images/bg-desktop-light.jpg');
     background-size: 100% 100%;
 }
 
+.header-image.light {
+    background-image: url('../images/bg-desktop-light.jpg');
+    transition: all .3s;
+}
+
+.header-image.dark {
+    background-image: url('../images/bg-desktop-dark.jpg');
+    transition: all .3s;
+}

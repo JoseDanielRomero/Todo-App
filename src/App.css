@@ -1,5 +1,4 @@
 .App {
-    background-color: hsl(0, 0%, 92%);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -7,4 +6,12 @@
     align-items: center;
   }
   
-  
+.App.light {
+  background-color: hsl(0, 0%, 92%);
+  transition: all .3s;
+}
+
+.App.dark {
+  background-color: hsl(235, 21%, 11%);
+  transition: all .3s;
+}

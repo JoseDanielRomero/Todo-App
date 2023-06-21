@@ -1,12 +1,21 @@
 .input-task-container {
     height: 11%;
     width: 100%;
-    background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.input-task-container.light {
+    background-color: white;
+    transition: all .3s;
+}
+
+.input-task-container.dark {
+    background-color: hsl(233, 24%, 22%);
+    transition: all .3s;
 }
 
 .input-task {
@@ -15,7 +24,17 @@
     margin-left: 10%;
     font-size: 1.1rem;
     border: none;
-    color: hsl(235, 19%, 35%);
+    background-color: transparent;
+}
+
+.input-task.light {
+    color: hsl(235, 19%, 35%);;
+    transition: all .3s;
+}
+
+.input-task.dark {
+    color: white;
+    transition: all .3s;
 }
 
 .input-task::placeholder {
@@ -36,7 +55,16 @@
     background-color: transparent;
     cursor: pointer;
     margin: 0 1.5%;
+}
+
+.submit-button.light {
     filter: invert(28%) sepia(19%) saturate(775%) hue-rotate(196deg) brightness(97%) contrast(91%);
+    transition: all .3s;
+}
+
+.submit-button.dark {
+    filter: invert(1);
+    transition: all .3s;
 }
 
 .add-icon {

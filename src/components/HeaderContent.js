@@ -1,9 +1,12 @@
 import '../stylesheets/HeaderContent.css'
 
-function HeaderContent() {
+function HeaderContent({ darkMode }) {
+
+    const changeTheme = darkMode ? 'header-image dark' : 'header-image light';
+
     return (
         <header className='header-container'>
-            <div className='header-image-light'></div>
+            <div className={changeTheme}></div>
         </header>
     )
 }

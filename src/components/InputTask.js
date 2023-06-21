@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid'
 import '../stylesheets/InputTask.css'
 import addIcon from '../images/round-add-button-svgrepo-com.svg'
 
-function InputTask({ newTask, setNewTask, tasks, setTasks }) {
+function InputTask({ newTask, setNewTask, tasks, setTasks, darkMode }) {
     const handleChangeTask = (event) => {
         setNewTask(event.target.value);
     }
@@ -22,17 +22,21 @@ function InputTask({ newTask, setNewTask, tasks, setTasks }) {
         setNewTask('')
     }
 
+    const changeTheme = darkMode ? 'input-task-container dark' : 'input-task-container light';
+    const changeTheme2 = darkMode ? 'input-task dark' : 'input-task light';
+    const changeTheme3 = darkMode ? 'submit-button dark' : 'submit-button light';
+
     return (
-        <form className='input-task-container' onSubmit={handleSubmit}>
+        <form className={changeTheme} onSubmit={handleSubmit}>
             <input 
                 type='text'
                 placeholder='Create a new todo...' 
-                className='input-task' 
+                className={changeTheme2} 
                 spellCheck='false'
                 value={newTask}
                 onChange={handleChangeTask}
             />
-            <button type='submit' className='submit-button'>
+            <button type='submit' className={changeTheme3}>
                 <img src={addIcon} className='add-icon'/>
             </button>
         </form>
