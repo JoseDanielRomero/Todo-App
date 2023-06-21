@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid'
 import '../stylesheets/InputTask.css'
 import addIcon from '../images/round-add-button-svgrepo-com.svg'
 
-function InputTask({ newTask, setNewTask, tasks, setTasks }) {
+function InputTask({ newTask, setNewTask, tasks, setTasks, isCompleted, setIsCompleted }) {
     const handleChangeTask = (event) => {
         setNewTask(event.target.value);
     }
@@ -17,7 +17,6 @@ function InputTask({ newTask, setNewTask, tasks, setTasks }) {
             isCompleted: false
         });
         setTasks(copyTasks)
-        console.log(copyTasks);
         setNewTask('')
     }
 

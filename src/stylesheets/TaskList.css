@@ -4,3 +4,45 @@
     background-color: white;
     border-radius: 10px;
 }
+
+.task-container {
+    height: 13%;
+    width: 100%;
+    padding: 3% 0;
+}
+
+.checkbox-task {
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    border: .1px solid gray;
+    margin: 0 3%;
+}
+
+.checkbox-task:checked {
+    background: rgb(104,191,250);
+    background: linear-gradient(140deg, rgba(104,191,250,1) 0%, rgba(153,101,231,1) 100%);
+    border: none;
+}
+
+.task-text {
+    font-size: 1.1rem;
+    color: hsl(235, 19%, 35%);
+}
+
+.tachado {
+    text-decoration: line-through;
+    color: hsl(237, 9%, 60%);
+}
+
+hr {
+    border: .1px solid rgb(217, 217, 217);
+    margin-top: 3%;
+}
